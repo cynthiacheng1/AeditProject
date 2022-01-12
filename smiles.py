@@ -61,7 +61,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random
 
 
 i = random.randint(1,600) # select any random index from 1 to 600
-plt.imshow( X_train[i] )
+# plt.imshow( X_train[i] )
 # plt.show()
 # print(y_train[i])
 
@@ -90,7 +90,7 @@ for i in np.arange(0, W_grid * L_grid): # create evenly spaces variables
     axes[i].set_title(y_train[index], fontsize = 25)
     axes[i].axis('off')
 
-plt.subplots_adjust(hspace=0.4)
+# plt.subplots_adjust(hspace=0.4)
 # plt.show()
 
 X_train = X_train/255
@@ -157,3 +157,5 @@ from sklearn.metrics import classification_report
 
 print(classification_report(y_test.T, predictions))
 
+#reference code 
+# https://cppsecrets.com/users/5271114105115104979810446114107495548525364103109971051084699111109/Advanced-Python-Project-Smiling-Face-Detector-using-CNN.php
