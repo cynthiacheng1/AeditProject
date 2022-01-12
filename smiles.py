@@ -16,21 +16,10 @@ from keras.callbacks import TensorBoard
 #setting the path to the directory containing the pics
 smilePath = 'smile/0/'
 notsmilePath = 'smile/1'
-examplePath = 'example/'
 
 #appending the pics to training and test data 
 X = []
 y = []
-
-# for img in os.listdir(examplePath):
-#     if (img != '.DS_Store'):
-#         pic = cv2.imread(os.path.join(examplePath,img))
-#         # print(img)
-#         # print("img")
-#         pic = cv2.cvtColor(pic,cv2.COLOR_BGR2RGB)
-#         pic = cv2.resize(pic,(64,64))
-#         X.append(pic)
-#         y.append(1)
 
 for img in os.listdir(smilePath):
     if (img != '.DS_Store'):
@@ -53,15 +42,10 @@ for img in os.listdir(notsmilePath):
         y.append(0)
 
 
-# X = np.array(X)
 y = np.array(y)
-# print("X.shape")
-# print(len(X))
-# print(X)
-
 X = np.array(X)
-print("X.shape")
-print(X.shape)
+# print("X.shape")
+# print(X.shape)
 # print(X)
 
 # print(X.shape)
@@ -70,10 +54,10 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random
 
 # print(X_train)
 # print(y_train)
-print('X_train.shape')
-print('y_train.shape')
-print(X_train.shape)
-print(y_train.shape)
+# print('X_train.shape')
+# print('y_train.shape')
+# print(X_train.shape)
+# print(y_train.shape)
 
 
 i = random.randint(1,600) # select any random index from 1 to 600
@@ -112,10 +96,10 @@ plt.subplots_adjust(hspace=0.4)
 X_train = X_train/255
 X_test = X_test/255
 
-print(X_train.shape)
-#(6939, 64, 64, 3)
-print(y_train.shape)
-#(6939,)
+# print(X_train.shape)
+# #(6939, 64, 64, 3)
+# print(y_train.shape)
+# #(6939,)
 
 cnn_model = Sequential()
 
@@ -153,8 +137,8 @@ predictions = (cnn_model.predict(X_test) > 0.5).astype("int32")
 # predict_x=model.predict(X_test) 
 # classes_x=np.argmax(predict_x,axis=1)
 
-print(predictions.shape)
-print(y_test.shape)
+# print(predictions.shape)
+# print(y_test.shape)
 
 L = 5
 W = 5
