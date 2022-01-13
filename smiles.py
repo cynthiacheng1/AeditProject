@@ -129,13 +129,7 @@ evaluation = cnn_model.evaluate(X_test, y_test)
 print('Test Accuracy : {:.3f}'.format(evaluation[1]))
 
 # get the predictions for the test data
-# predicted_classes = cnn_model.predict_classes(X_test)
-
 predictions = (cnn_model.predict(X_test) > 0.5).astype("int32")
-
-
-# predict_x=model.predict(X_test) 
-# classes_x=np.argmax(predict_x,axis=1)
 
 # print(predictions.shape)
 # print(y_test.shape)
